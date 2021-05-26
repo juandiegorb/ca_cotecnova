@@ -26,12 +26,7 @@
 
         <!-- Custom Fonts -->
         <link href="../assets/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+
     </head>
     <body>
 
@@ -62,7 +57,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>-->
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                             </li>
                         </ul>
                     </li>
