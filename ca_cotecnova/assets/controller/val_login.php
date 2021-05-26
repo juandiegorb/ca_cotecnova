@@ -1,9 +1,10 @@
 <?php 
-if(isset($_POST['cedula']) && isset($_POST['password'])){
+if(isset($_POST['documento']) && isset($_POST['clave'])&& isset($_POST['tipousuario'])){
     require_once '../model/MySQL.php'; //se llama la pagina donde se encuentra la conexion para la base de datos
     //declaracion de variables
-    $ced=$_POST['cedula'];
-    $pass=$_POST['password'];
+    $doc=$_POST['documento'];
+    $clave=$_POST['clave'];
+    $tipousuario=$_POST['tipousuario'];
 
     $mysql = new MySQL(); //se declara un nuevo array
     $mysql->conectar();

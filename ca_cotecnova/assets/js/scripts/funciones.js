@@ -2,6 +2,7 @@
 $("#ingresar").click(function(event){
   event.preventDefault();//Previene que la etiqueta "a" ejecute el href
   //Se crean variables para guardar lo ingresado en los inputs del login
+  alertify.error('Consulta vacia');
   var documento = document.getElementById("documento").value.trim();//Guarda la informacion del numero de cedula ingresado por el usuario
   var clave = document.getElementById("clave").value.trim();//Guarda la informacion de la contraseña ingresada por el usuario  
   var tipousuario = document.getElementById("tipousuario").value;//Guarda la informacion de la contraseña ingresada por el usuario  
@@ -10,11 +11,11 @@ $("#ingresar").click(function(event){
   //La variable "validar" se encuentra en el script de validacion.js
   //En la variable validar es como un arreglo que guarda los metodos que van a 
   //servir para validar las variables
-  if( documento != '' && clave != '') {
+  
+  if( documento != '' && clave != '' && tipousuario!='') {
     //Encriptacion de las variables ingresadas por el usuario en base64    
     //Variable que se va a enviar po ajax
-    cadena="cedula=" + documento + 
-    "&password=" + clave + "&tiposuario=" + tipousuario;
+    cadena="documento=" + documento + "&clave=" + clave + "&tipousuario=" + tipousuario;
     $.ajax({
         type:"POST",//Metodo de envio
         url:"assets/controller/val_login.php",//Ruta destino a la cual se le va a enciar la variable
