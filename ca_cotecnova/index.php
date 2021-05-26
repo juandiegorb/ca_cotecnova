@@ -34,7 +34,7 @@
             <div class="col-md-7"><center>
               <div class="card-body">
                 <p class="login-card-description">Sistema de Login</p>
-                <form action="#!">
+                <form action="POST">
                   <div class="form-group">
                     <label for="documento" class="sr-only">documento</label>
                     <input type="text" name="documento"id="documento" class="form-control" placeholder="Documento"
