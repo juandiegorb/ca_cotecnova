@@ -40,7 +40,7 @@
     //Ademas carga en la etiqueta con id view, la presentacion 
     $(document).ready(function () {
         mainApp.main_fun();
-        $("#view").load("./pages/presentacion.php");
+        $("#view").load("./pages/inicio.php");
     });
     
 
@@ -93,7 +93,7 @@ var gestionaula = document.getElementById(""+ids[4]+"");
 var gestionmateria = document.getElementById(""+ids[5]+"");
 var gestioncarrera = document.getElementById(""+ids[6]+"");
 
-//Funcion que se ejecutal al dar click en la opcion del menu transferir
+//Funcion que se ejecutal al dar click en la opcion del menu inicio
 inicio.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
     $("#view").load("pages/inicio.php");//Cargar en la etiqueta con id view la vista solicitada
@@ -251,7 +251,7 @@ function submittransferir(){
 
 //Funcion que hace que haga que se devulva a la presentacion
 function cancelar(cancel){ 
-    $("#view").load("pages/presentacion.php");//Cargar en la etiqueta con id view la vista solicitada
+    $("#view").load("pages/inicio.php");//Cargar en la etiqueta con id view la vista solicitada
 };
 //Funcion que se ejecutal al dar click en el boton transferir de la presentacion
 function submitdepositar(){

@@ -119,67 +119,24 @@
                 </div>
             </nav>
 
-            <div id="page-wrapper">
-                <div class="container-fluid" >
-                    <div class="row" >
-                        <div class="col-lg-12" >
-
-                        </div>
-                        <!-- /.col-lg-12 -->
-                    </div>
-                    <br><br><br><br><br><br><br><br><br><br>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <!--espacio para titulo x-->
-                                </div>
-                                <!-- /.panel-heading -->
-                            <center>
-                                <div class="panel-body">
-                                    <i>
-                                        En el panel izquierdo de este
-                                        espacio usted podra encontrar el
-                                        acceso de toda la informacion
-                                        acedemica que le corresponde, como
-                                        Administrador puede hacer todas las
-                                        operaciones disponibles, si desea agregar,
-                                        modificar, eliminar o buscar un dato
-                                        recuerde hacerlo desde el correspondiente
-                                        modulo.
-                                    </i>
-                                </div>
-                            </center>
-                                <!-- /.panel-body -->
-                            </div>                          
-                            <!-- /.panel .chat-panel -->
-                        </div>
-                        <!-- /.col-lg-4 -->
-                    </div>
-                    <!-- /.row -->
+             <!-- PAGE WRAPPER  -->
+            <div id="page-wrapper" >
+                <!-- PAGE INNER  -->
+                <div id="page-inner">                 
+                    <hr />
+                    <!-- /. ROW -->
+                    <div id="view">
+                        <!-- View: Aqui se va a cargar las paginas  -->
+                    </div> 
+                    <!-- /. ROW -->         
                 </div>
-                <!-- /.container-fluid -->
+                <!-- /. PAGE INNER  -->
             </div>
-            <!-- /#page-wrapper -->
+            <!-- /. PAGE WRAPPER  -->
         </div>
         <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script src="../assets/js/bootstrap/jquery.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
-
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../assets/js/bootstrap/metisMenu.min.js"></script>
-
-        <!-- Morris Charts JavaScript -->
-        <script src="../assets/js/bootstrap/raphael.min.js"></script>
-        <script src=".../assets/js/bootstrap/morris.min.js"></script>
-        <script src="../assets/js/bootstrap/morris-data.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="../assets/js/bootstrap/startmin.js"></script>
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
