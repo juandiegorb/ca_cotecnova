@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="assets_login/css/login.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
     <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -26,7 +26,7 @@
           <div class="row no-gutters">
             <div class="col-md-5">
               <img
-                src="assets_login/images/logo_cotecnova.png"
+                src="assets/img/logo_cotecnova.png"
                 alt="login"
                 class="login-card-img"
               />
