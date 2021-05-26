@@ -1,3 +1,22 @@
+<?php
+    session_start();//Inicio de sesion
+    $id_usuario1 = $_SESSION['id'];//Id del usuario actual
+    //Validacion para comprobar si ya se ha iniciado sesion
+    //Esto sirve para no permitir navegar entre paginas sin haberse logueado
+    if(!isset($_SESSION['id'])){
+        //no permite que se entre a las demas vistas por medio de la url
+        header("location: ../index.php");
+    }
+    require_once 'model/MySQL.php'; 
+    $mysql = new MySQL(); //se declara un nuevo array
+    $mysql->conectar();//Conexion a la base de datos
+    $NombreUsuario = $mysql->efectuarConsulta("SELECT nombres, apellidos FROM administrador WHERE id_administrador = '".$id_usuario1."'");
+    //Este while recorre las filas encontradas en la consulta anterior
+    while ($resultado= mysqli_fetch_assoc($NombreUsuario)){
+        $nombres= ($resultado["nombres"]);//Guarda el el primer nombre
+        $apellidos= ($resultado["apellidos"]);//Guarda el primer apellido
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -49,7 +68,8 @@
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
+                            
+                            <i class="fa fa-user fa-fw"></i> <?php echo $nombres.' '.$apellidos; ?> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <!--<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -57,7 +77,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>-->
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                            <li ><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                             </li>
                         </ul>
                     </li>
