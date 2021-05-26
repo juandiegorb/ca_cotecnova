@@ -83,18 +83,20 @@ $('#cerrar_session').click(function() {
 ========================================================*/
 
 //Array que contiene los id de los procedimientos que ejecuta el menu lateral
-var ids = ['transferir','depositar','retirar','consultar','historial'];
+var ids = ['inicio','gestiondocente','gestionestudiante','gestionhorario','gestionaula','gestionmateria','gestioncarrera'];
 //Se captura en variables los id del array
-var transferir = document.getElementById(""+ids[0]+"");
-var depositar = document.getElementById(""+ids[1]+"");
-var retirar = document.getElementById(""+ids[2]+"");
-var consultar = document.getElementById(""+ids[3]+"");
-var historial = document.getElementById(""+ids[4]+"");
+var inicio = document.getElementById(""+ids[0]+"");
+var gestiondocente = document.getElementById(""+ids[1]+"");
+var gestionestudiante = document.getElementById(""+ids[2]+"");
+var gestionhorario = document.getElementById(""+ids[3]+"");
+var gestionaula = document.getElementById(""+ids[4]+"");
+var gestionmateria = document.getElementById(""+ids[5]+"");
+var gestioncarrera = document.getElementById(""+ids[6]+"");
 
 //Funcion que se ejecutal al dar click en la opcion del menu transferir
-transferir.addEventListener("click", function(event){
+inicio.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
-    $("#view").load("pages/transferir.php");//Cargar en la etiqueta con id view la vista solicitada
+    $("#view").load("pages/inicio.php");//Cargar en la etiqueta con id view la vista solicitada
     //EL siguiete for va a recorrer el arreglo que contiene el nombre de los
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario

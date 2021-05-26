@@ -37,39 +37,23 @@
                 <form action="#!">
                   <div class="form-group">
                     <label for="documento" class="sr-only">documento</label>
-                    <input
-                      type="number"
-                      name="documento"
-                      id="documento"
-                      class="form-control"
-                      placeholder="Documento"
+                    <input type="text" name="documento"id="documento" class="form-control" placeholder="Documento"
                     />
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      class="form-control"
-                      placeholder="***********"
-                    />
+                    <input type="password" name="password" id="clave" class="form-control" placeholder="***********"/>
                   </div>
                   <div class="form-group">
                     <label>Tipo de usuario: </label>
-                    <select name="tipo_usuario_login">
-                      <option value="Docente">Docente</option>
-                      <option value="Estudiante">Estudiante</option>
-                      <option value="Administrador">Administrador</option>
+                    <select id="tipousuario" name="tipo_usuario_login">
+                      <option value="1">Estudiante</option>
+                      <option value="2">Docente</option>
+                      <option value="3">Administrador</option>
                     </select>
                   </div>
-                  <input
-                    name="login"
-                    id="login"
-                    class="btn btn-block login-btn mb-4"
-                    type="button"
-                    value="Ingresar"
-                  />
+                  <input name="login" id="ingresar" class="btn btn-block login-btn mb-4"
+                    type="button" value="Ingresar"/>
                 </form>
                 <a href="#!" class="forgot-password-link"
                   >¿Has olvidado tu contraseña o aun no la tienes?</a
@@ -84,8 +68,12 @@
         </div>
       </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery/jquery-3.5.1.js"></script>  
+    <!-- ALERTIFY SCRIPTS -->
+    <script src="assets/js/alertify/alertify.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/scripts/validacion.js"></script>
+    <script src="assets/js/scripts/funciones.js"></script>
+     
   </body>
 </html>
