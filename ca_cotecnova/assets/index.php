@@ -38,6 +38,9 @@
 
         <!-- Timeline CSS -->
         <link href="../assets/css/bootstrap/timeline.css" rel="stylesheet">
+        <!-- TABLE STYLES-->
+        <link href="css/dataTables/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="css/dataTables/responsive.dataTables.min.css" rel="stylesheet" />
 
         <!-- Custom CSS -->
         <link href="../assets/css/bootstrap/startmin.css" rel="stylesheet">
@@ -89,12 +92,12 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="index.php" class="active"><i class="fa fa-home fa-fw"></i> Inicio</a>
+                                <a href="#" id="inicio" class="active"><i class="fa fa-home fa-fw"></i> Inicio</a>
                             </li>
                             
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-table fa-fw"></i> Gestionar Docente</a>
+                                <a href="#" id="gestionardocente"><i class="fa fa-table fa-fw"></i> Gestionar Docente</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-edit fa-fw"></i> Gestionar Estudiante</a>
@@ -148,7 +151,7 @@
     <!-- ALERTIFY STYLES--> 
     <script src="js/alertify/alertify.js"></script>
     <!-- DATA TABLE SCRIPTS -->
-    <script src="js/dataTables/jquery.dataTables.min.js"></script>
+    <<script src="js/dataTables/jquery.dataTables.min.js"></script>
     <script src="js/dataTables/dataTables.responsive.min.js"></script>
     <!-- JQUERY METIS MENU SCRIPTS -->
     <script src="js/jquery/jquery.metisMenu.js"></script>

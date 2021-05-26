@@ -83,15 +83,15 @@ $('#cerrar_session').click(function() {
 ========================================================*/
 
 //Array que contiene los id de los procedimientos que ejecuta el menu lateral
-var ids = ['inicio','gestiondocente','gestionestudiante','gestionhorario','gestionaula','gestionmateria','gestioncarrera'];
+var ids = ['inicio','gestionardocente','gestionarestudiante','gestionarhorario','gestionaraula','gestionarmateria','gestionarcarrera'];
 //Se captura en variables los id del array
 var inicio = document.getElementById(""+ids[0]+"");
-var gestiondocente = document.getElementById(""+ids[1]+"");
-var gestionestudiante = document.getElementById(""+ids[2]+"");
-var gestionhorario = document.getElementById(""+ids[3]+"");
-var gestionaula = document.getElementById(""+ids[4]+"");
-var gestionmateria = document.getElementById(""+ids[5]+"");
-var gestioncarrera = document.getElementById(""+ids[6]+"");
+var gestionardocente = document.getElementById(""+ids[1]+"");
+var gestionarestudiante = document.getElementById(""+ids[2]+"");
+var gestionarhorario = document.getElementById(""+ids[3]+"");
+var gestionaraula = document.getElementById(""+ids[4]+"");
+var gestionarmateria = document.getElementById(""+ids[5]+"");
+var gestionarcarrera = document.getElementById(""+ids[6]+"");
 
 //Funcion que se ejecutal al dar click en la opcion del menu inicio
 inicio.addEventListener("click", function(event){
@@ -111,9 +111,9 @@ inicio.addEventListener("click", function(event){
 });
 
 //Funcion que se ejecutal al dar click en la opcion del menu depositar
-depositar.addEventListener("click", function(event){
+gestionardocente.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
-    $("#view").load("pages/depositar.php");//Cargar en la etiqueta con id view la vista solicitada
+    //Cargar en la etiqueta con id view la vista solicitada
     //EL siguiete for va a recorrer el arreglo que contiene el nombre de los
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario
@@ -125,6 +125,18 @@ depositar.addEventListener("click", function(event){
             $("#"+ids[i]+"").removeClass("active-menu")
         }
     }
+    $("#view").load("pages/tablas/tablareferenciadocentes.php");//Cargar en la etiqueta con id view la vista solicitada
+    setTimeout(function() {
+        $('#Tabladocente').DataTable( {
+            "ajax": "pages/tablas/tablainformaciondocentes.php",
+            "columns": [
+                { "data": "documento" },
+                { "data": "nombres" },
+                { "data": "apellidos" },
+                { "data": "tipousuario" }
+            ]
+        } );        
+    },100);
     //La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
 
@@ -394,6 +406,10 @@ function btnretirar(){
 /*====================================
     DATA TABLES
 ======================================*/
+//Funcion que se ejecuta al dar click en el boton transacciont1 de la presentacion
+
+
+
 
 //Funcion que se ejecuta al dar click en el boton transacciont1 de la presentacion
 function transacciont(){
