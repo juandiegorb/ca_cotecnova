@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="assets/css/alertify/alertify.css">
     <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
@@ -34,7 +35,7 @@
             <div class="col-md-7"><center>
               <div class="card-body">
                 <p class="login-card-description">Sistema de Login</p>
-                <form action="POST">
+                <form>
                   <div class="form-group">
                     <label for="documento" class="sr-only">documento</label>
                     <input type="text" name="documento"id="documento" class="form-control" placeholder="Documento"

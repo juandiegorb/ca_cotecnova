@@ -2,7 +2,6 @@
 $("#ingresar").click(function(event){
   event.preventDefault();//Previene que la etiqueta "a" ejecute el href
   //Se crean variables para guardar lo ingresado en los inputs del login
-  alertify.error('Consulta vacia');
   var documento = document.getElementById("documento").value.trim();//Guarda la informacion del numero de cedula ingresado por el usuario
   var clave = document.getElementById("clave").value.trim();//Guarda la informacion de la contraseña ingresada por el usuario  
   var tipousuario = document.getElementById("tipousuario").value;//Guarda la informacion de la contraseña ingresada por el usuario  
@@ -25,7 +24,7 @@ $("#ingresar").click(function(event){
                 alertify.success('Logueado con exito :)');//Se le alerta al usuario que se logeado correctamente
                 setTimeout(function(){ window.location = './assets/index.php';}, 1000);//Despues de 1 segundo se redirecciona a la pagina de administracion
             }else if(r==0){//Se valida si el valor retornado es igual a 0, pues esto es el resultado de la consulta sql, si el usuario no se encontro
-              alertify.error('Usuario no encontrado');//Se le alerta al usuario que no se ha encontrado el usuario ingresado
+              alertify.error('Usuario no encontrado o datos incorrectos');//Se le alerta al usuario que no se ha encontrado el usuario ingresado
             }else if(r=="consultaVacia"){//Se valida si el valor retornado es igual a consultaVacia, esto significaria que hubo un error en la consulta
               alertify.error('Consulta vacia');//Se le alerta al usuario que hubo un error con la consulta sql
             }

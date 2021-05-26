@@ -4,30 +4,38 @@ if(isset($_POST['documento']) && isset($_POST['clave'])&& isset($_POST['tipousua
     //declaracion de variables
     $doc=$_POST['documento'];
     $clave=$_POST['clave'];
-    $tipousuario=$_POST['tipousuario'];
+    $tipousuario=$_POST['tipousuario'];//esto se utiliza para separar los tipos de usuario en las consultas
 
     $mysql = new MySQL(); //se declara un nuevo array
     $mysql->conectar();
     //ejecucion de consulta
-    $cedcontra = $mysql->efectuarConsulta("select id_usuario, primer_nombre, primer_apellido from `usuario` where `numero_cedula` = '".$ced."' AND `contrasena` = '".$pass."'");   
-    if(!empty($cedcontra)){
-        if (mysqli_num_rows($cedcontra) > 0){ 
-            while ($resultado= mysqli_fetch_assoc($cedcontra)){
-                $id_usuario= $resultado["id_usuario"];
-                $primer_nombre= $resultado["primer_nombre"];
-                $primer_apellido= $resultado["primer_apellido"];
+    if($tipousuario == 1){        
+        
+    }elseif ($tipousuario == 2){    
+        
+    }elseif($tipousuario == 3){
+        $cedcontra = $mysql->efectuarConsulta("select id_administrador, nombres, apellidos, tipo_usuario_id_tipo_usuario from `administrador` where `documento` = '".$doc."' AND `clave` = '".$clave."'");   
+        if(!empty($cedcontra)){
+            if (mysqli_num_rows($cedcontra) > 0){ 
+                while ($resultado= mysqli_fetch_assoc($cedcontra)){
+                    $id_usuario= $resultado["id_administrador"];
+                    $nombres= $resultado["nombres"];
+                    $apellidos= $resultado["apellidos"];
+                    $tipousuario= $resultado["tipo_usuario_id_tipo_usuario"];
+                }
+                $mysql->desconectar();
+                session_start();//Inicio de sesion
+                $_SESSION['id']=$id_usuario;
+                $_SESSION['nombre']=$nombres.' '.$apellidos;
+                $_SESSION['tipousuario']=$tipousuario;
+
+                echo '1';
+            }else{
+                echo '0';
             }
-            $mysql->desconectar();
-            session_start();//Inicio de sesion
-            $_SESSION['nombre']=$primer_nombre.' '.$primer_apellido;
-            $_SESSION['id']=$id_usuario;
-            echo '1';
         }else{
-            echo '0';
-        }
-    }else{
-        echo "consultaVacia";
-    }  
-}
-  
+            echo "consultaVacia";
+        }          
+    }    
+}  
 ?>
