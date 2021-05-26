@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 23:45:21
+-- Tiempo de generación: 27-05-2021 a las 00:11:37
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.3.28
 
@@ -41,7 +41,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `documento`, `nombres`, `apellidos`, `clave`, `tipo_usuario_id_tipo_usuario`) VALUES
-(1, '1006318241', 'Natalia', 'Agudelo', '1234', 1);
+(1, '1006318241', 'Natalia', 'Agudelo', '1234', 3);
 
 -- --------------------------------------------------------
 
@@ -161,8 +161,9 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`id_tipo_usuario`, `nombre`) VALUES
-(1, 'Administrador'),
-(2, 'Docente');
+(1, 'Estudiante'),
+(2, 'Docente'),
+(3, 'Administrador');
 
 --
 -- Índices para tablas volcadas
