@@ -113,31 +113,18 @@ inicio.addEventListener("click", function(event){
 //Funcion que se ejecutal al dar click en la opcion del menu depositar
 gestionardocente.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
-    //Cargar en la etiqueta con id view la vista solicitada
+    $("#view").load("pages/gestionardocente.php");//Cargar en la etiqueta con id view la vista solicitada
     //EL siguiete for va a recorrer el arreglo que contiene el nombre de los
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario
     //precione alguna opcion, esta se quede seleccionada con el color rojo
     for (var i = 0; i < ids.length; i++) {
-        if (ids[i] == ids[1]) {//Si verdadero, se agrega la clase active-menu
+        if (ids[i] == ids[0]) {//Si verdadero, se agrega la clase active-menu
             $("#"+ids[i]+"").addClass("active-menu");
         }else{//De lo contrrio, le quita la clase active-menu
             $("#"+ids[i]+"").removeClass("active-menu")
         }
-    }
-    $("#view").load("pages/tablas/tablareferenciadocentes.php");//Cargar en la etiqueta con id view la vista solicitada
-    setTimeout(function() {
-        $('#Tabladocente').DataTable( {
-            "ajax": "pages/tablas/tablainformaciondocentes.php",
-            "columns": [
-                { "data": "documento" },
-                { "data": "nombres" },
-                { "data": "apellidos" },
-                { "data": "tipousuario" }
-            ]
-        } );        
-    },100);
-    //La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
+    }//La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
 
 //Funcion que se ejecutal al dar click en la opcion del menu retirar
@@ -408,6 +395,20 @@ function btnretirar(){
 ======================================*/
 //Funcion que se ejecuta al dar click en el boton transacciont1 de la presentacion
 
+function gestionardocente(){
+    $("#gestionardocente").load("pages/tablas/tabladocente.php");//Cargar en la etiqueta con id view la vista solicitada
+    setTimeout(function() {  
+        $('#gestionardocente').DataTable( {
+            "ajax": "pages/tablas/informaciondocente.php",
+            "columns": [
+                { "data": "documento" },
+                { "data": "nombres" },
+                { "data": "apellidos" },
+                { "data": "menu" }
+            ]
+        } );   
+    },100);
+}
 
 
 
