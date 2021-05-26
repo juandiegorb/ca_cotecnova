@@ -27,7 +27,9 @@
         <meta name="author" content="">
 
         <title>Adminstrador</title>
-
+        <!-- ALERTIFU STYLES-->
+        <link rel="stylesheet" href="css/alertify/alertify.css">
+        <link rel="stylesheet" href="css/alertify/bootstrap.css">
         <!-- Bootstrap Core CSS -->
         <link href="../assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
@@ -67,7 +69,7 @@
 
                 <ul class="nav navbar-right navbar-top-links">
                 <div class="navbar-header">
-                    <a class="navbar-brand"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                    <a id="cerrar_session" class="navbar-brand"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                 </div>
                 </ul>
 
@@ -110,7 +112,7 @@
                                 <a href="#"><i class="fa fa-edit fa-fw"></i> Gestionar Carrera</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-user fa-fw"></i> Cerrar Sesion</a>
+                                <a id="cerrar_session"><i class="fa fa-user fa-fw"></i> Cerrar Sesion</a>
                             </li>
                         </ul>
                     </div>
@@ -179,5 +181,25 @@
         <!-- Custom Theme JavaScript -->
         <script src="../assets/js/bootstrap/startmin.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="js/jquery/jquery-3.5.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- ALERTIFY STYLES--> 
+    <script src="js/alertify/alertify.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables/dataTables.responsive.min.js"></script>
+    <!-- JQUERY METIS MENU SCRIPTS -->
+    <script src="js/jquery/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->  
+    <script src="js/scripts/validacion.js"></script>  
+    <script src="js/scripts/funciones.js"></script>
+    <script src="js/scripts/index.js"></script> 
+
+
     </body>
 </html>
