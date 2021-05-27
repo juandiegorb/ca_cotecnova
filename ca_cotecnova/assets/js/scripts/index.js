@@ -128,9 +128,8 @@ gestionardocente.addEventListener("click", function(event){
 });
 
 //Funcion que se ejecutal al dar click en la opcion del menu retirar
-retirar.addEventListener("click", function(event){
+gestionarestudiante.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
-    $("#view").load("pages/retirar.php");//Cargar en la etiqueta con id view la vista solicitada
     //EL siguiete for va a recorrer el arreglo que contiene el nombre de los
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario
@@ -142,6 +141,21 @@ retirar.addEventListener("click", function(event){
             $("#"+ids[i]+"").removeClass("active-menu")
         }
     }
+    
+     $("#view").load("pages/tablas/tablareferencialestudiante.php");//Cargar en la etiqueta con id view la vista solicitada
+    setTimeout(function() {
+        $('#tablaestudiante').DataTable( {
+            "ajax": "pages/tablas/tablainformacionestudiante.php",
+            "columns": [
+                { "data": "documento" },
+                { "data": "nombres" },
+                { "data": "apellidos" },
+                { "data": "tipo_usuario_id_tipo_usuario" }
+            ]
+        } );
+    },50);
+    
+    
     //La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
 

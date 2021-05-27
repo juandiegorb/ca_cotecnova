@@ -90,7 +90,7 @@
                                 <a href="#" id="gestionardocente"><i class="fa fa-table fa-fw"></i> Gestionar Docente</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i> Gestionar Estudiante</a>
+                                <a href="#" id="gestionarestudiante"><i class="fa fa-edit fa-fw"></i> Gestionar Estudiante</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-edit fa-fw"></i> Gestionar Horario</a>
