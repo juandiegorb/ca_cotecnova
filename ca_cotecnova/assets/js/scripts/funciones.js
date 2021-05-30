@@ -16,7 +16,7 @@ $("#ingresar").click(function(event){
     //Variable que se va a enviar po ajax
     cadena="documento=" + documento + "&clave=" + clave + "&tipousuario=" + tipousuario;
     $.ajax({
-        type:"POST",//Metodo de envio
+        type:"post",//Metodo de envio
         url:"assets/controller/val_login.php",//Ruta destino a la cual se le va a enciar la variable
         data:cadena,//La informacion que se va a enviar a la ruta destino
         success:function(r){//Funcion que se ejecuta si se completa la peticion y retorna un valor
