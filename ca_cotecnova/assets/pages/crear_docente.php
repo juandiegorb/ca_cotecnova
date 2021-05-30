@@ -26,98 +26,50 @@
               <!-- Tab panes -->
               <div class="card-body">
                   <!-- Formulario donde al darle al boton se envian los datos al controlador de insertar usuario -->
-                  <form class="form-horizontal form-material" action="Controlador/insertarUsuario.php" method="POST">                
-                  <div class="form-group">
-                    <label class="col-sm-3">Tipo de documento</label>
-                    <div class="col-sm-8">
-                        <select class="form-control form-control-line" name="tipoDocumento" required="">
-                        <option disabled selected="true">Seleccione una opcion</option>
-                        <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                         <?php 
-                         while ($resultado= mysqli_fetch_assoc($seleccionDocumento)){   
-                             ?> 
-                        <!-- Se traen los datos y se imprimen en las opciones del select -->
-                          <option value="<?php echo $resultado['id_tipo_documento']?>"><?php echo $resultado['nombre']?></option>  
-                          <?php }?>
-                      </select>
+                  <form class="form-horizontal form-material" method="POST">     
+                      <div class="form-group">
+                    <label class="col-md-3">Numero Documento</label>
+                    <div class="col-md-8">
+                        <input type="number"  id="numerodocumento" placeholder="Ingrese el numero del documento" name="numeroDocumento"  class="form-control form-control-line" required="" >
+                    </div>
+                  </div>                  
+                   <div class="form-group">
+                    <label class="col-md-3">Nombres</label>
+                    <div class="col-md-8">
+                        <input type="text" id="nombres" placeholder="Ingrese sus nombres" name="nombresCompleto" class="form-control form-control-line" required="">
                     </div>
                   </div>
-                  <!-- Divisiones, etiquetas e inputs -->
-                  <div class="form-group">
-                    <label class="col-sm-12">Numero</label>            
-                    <div class="col-md-12">
-                        <input type="text" placeholder="Ingrese el numero del documento" name="numeroDocumento" class="form-control form-control-line" required="" onkeypress="return solonumeros(event)">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-12">Nombre Completo</label>
-                    <div class="col-md-12">
-                        <input type="text" placeholder="Ingrese sus nombres" name="nombreCompleto" class="form-control form-control-line" required="" onkeypress="return sololetras(event)">
+                      <div class="form-group">
+                    <label class="col-md-3">Apellidos</label>
+                    <div class="col-md-8">
+                        <input type="text" id="apellidos" placeholder="Ingrese sus apellidos" name="apellidosCompleto" class="form-control form-control-line" required="">
                     </div>
                   </div>
                   <div class="form-group">                  
-                    <label class="col-md-12">Apellidos</label>
-                    <div class="col-md-12">
-                        <input type="text" placeholder="Ingrese sus apellidos" name="apellidos" class="form-control form-control-line" required="" onkeypress="return sololetras(event)">
+                    <label class="col-md-3">Clave</label>
+                    <div class="col-md-8">
+                        <input type="password" id="clave" placeholder="Ingrese su clave" name="clave" class="form-control form-control-line" required="">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-12">Estado civil</label>
-                    <div class="col-sm-12">
-                        <select class="form-control form-control-line" name="estadoCivil" required="">
-                        <option disabled selected="true">Seleccione una opcion</option>
-                           <?php 
-                           //se recorre el resultado de la consulta de estado civil
-                         while ($resultado= mysqli_fetch_assoc($seleccionEstado)){
-                             //se imprime los resultados
-                             ?> 
-                          <option value="<?php echo $resultado['id_estado_civil']?>"><?php echo $resultado['nombre']?></option>  
-                          <?php }?>
+                    <label class="col-sm-3">tipo usuario</label>
+                    <div class="col-sm-8">
+                        <select id="tipousuario" class="form-control form-control-line" name="tipousuario" disabled="" required="">
+                            <option  value="2">Docente</option>
                       </select>
                     </div>
-                  </div>                
-                  <div class="form-group">
-                    <label class="col-sm-12">Departamento de nacimiento</label>
-                    <div class="col-sm-12">
-                        <select class="form-control form-control-line" id="departamento" name="departamentoNacimiento" required="">
-                        <option disabled selected="true">Seleccione una opcion</option>
-                        <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                           <?php 
-                           //se recorre los resultado de departamentos
-                         while ($resultado= mysqli_fetch_assoc($seleccionDepartamento)){   
-                             ?>
-                        <!-- Se traen los datos y se imprimen en las opciones del select -->
-                          <option value="<?php echo $resultado['id_departamento']?>"><?php echo $resultado['nombre']?></option>  
-                          <?php }?>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-12">Ciudad de nacimiento</label>
-                    <div class="col-sm-12">
-                        <select class="form-control form-control-line" id="ciudad" name="ciudadNacimiento" disabled required="">
-                        <option disabled selected="true">Seleccione una ciudad</option>
-
-                      </select>
-                    </div>
-                  </div>
-                  <!-- Divisiones, etiquetas e inputs -->
-                  <div class="form-group">
-                    <label class="col-md-12">Contraseña</label>
-                    <div class="col-md-12">
-                        <input type="password" placeholder="Ingrese una clave" class="form-control form-control-line" name="contrasena" required="">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-3 col-md-2">
+                  </div>           
+                      <div class="form-group">
+                    <div class=" col-md-offset-7 col-md-2 ">
                          <!-- Boton que "enviara" los datos -->
-                        <button class="btn btn-success" name="enviar">Registrarse</button>
+                         <button class="btn btn-success" onclick="crearDocente()">Registrarse</button>
                     </div>
-                    <div class="col-sm-9 col-md-4">
+                    <div class="col-sm-9 col-md-2">
                         <!-- Boton que redirecciona al index -->
-                      <a href="index.php" class="btn btn-danger">Cancelar</a>
+                      <a onclick="cancelar()" class="btn btn-danger">Cancelar</a>
                     </div>
                   </div>
+                 
                 </form>
               </div>
             </div>

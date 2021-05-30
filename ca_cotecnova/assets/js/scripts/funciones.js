@@ -107,5 +107,37 @@ $("#registrar").click(function(event){
   }
 });
 
+//
+//$("#registrardocente").click(function(event){
+//    alertify.success('Registro exitoso :)');
+//    setTimeout(function(){ window.location = './assets/index.php';}, 5000);
+//  event.preventDefault();//Previene que la etiqueta "a" ejecute el href
+//  //Se crean variables para guardar lo ingresado en los inputs del login
+//  var documento = document.getElementById("numerodocumento").value.trim();//Guarda la informacion del numero de cedula ingresado por el usuario
+//  var nombres = document.getElementById("nombres").value.trim();//Guarda la informacion de la contraseña ingresada por el usuario  
+//  var apellidos = document.getElementById("apellidos").valuetrim();
+//  var clave = document.getElementById("clave").valuetrim();
+//  if( documento != '' && nombres != '' && apellidos!='' && clave!='') {
+//    //Encriptacion de las variables ingresadas por el usuario en base64    
+//    //Variable que se va a enviar po ajax
+//    cadena="documento=" + documento + "&nombres=" + nombres + "&apellidos=" + apellidos + "&clave=" + clave;
+//    $.ajax({
+//        type:"post",//Metodo de envio
+//        url:"assets/controller/crearDocente.php",//Ruta destino a la cual se le va a enciar la variable
+//        data:cadena,//La informacion que se va a enviar a la ruta destino
+//        success:function(r){//Funcion que se ejecuta si se completa la peticion y retorna un valor
+//            if(r==1){//Se valida si el valor retornado es igual a 1, pues esto es el resultado de la consulta sql, si se ejecuto sin ningun problema
+//                alertify.success('Registro exitoso :)');//Se le alerta al usuario que se logeado correctamente
+//                setTimeout(function(){ window.location = './assets/index.php';}, 1000);//Despues de 1 segundo se redirecciona a la pagina de administracion
+//            }else if(r==0){//Se valida si el valor retornado es igual a 0, pues esto es el resultado de la consulta sql, si el usuario no se encontro
+//              alertify.error('Error en la creacion de los datos');//Se le alerta al usuario que no se ha encontrado el usuario ingresado
+//              setTimeout(function(){ window.location = './assets/index.php';}, 1000);
+//            }
+//        }
+//    });  
+//  }else{
+//    alertify.error('Datos incorrectos');//Se le informa al usuario que los datos ingresados son incorrectos
+//  }
+//});
 
 

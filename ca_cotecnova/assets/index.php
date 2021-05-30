@@ -47,10 +47,9 @@
 
         <!-- Morris Charts CSS -->
         <link href="../assets/css/bootstrap/morris.css" rel="stylesheet">
-
+        
         <!-- Custom Fonts -->
-        <link href="../assets/css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+        <link href="css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
 

@@ -14,7 +14,7 @@
     //Este while recorre las filas encontradas en la consulta anterior
 ?>
 <head>
-	<link rel="stylesheet" type="text/css" href="../assets/css/datatables/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables/jquery.dataTables.min.css">        
 </head>
 
 <!-- /. ROW  -->
