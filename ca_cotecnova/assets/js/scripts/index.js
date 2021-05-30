@@ -101,13 +101,13 @@ inicio.addEventListener("click", function(event){
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario
     //precione alguna opcion, esta se quede seleccionada con el color rojo
-    for (var i = 0; i < ids.length; i++) {
-        if (ids[i] == ids[0]) {//Si verdadero, se agrega la clase active-menu
-            $("#"+ids[i]+"").addClass("active-menu");
-        }else{//De lo contrrio, le quita la clase active-menu
-            $("#"+ids[i]+"").removeClass("active-menu")
-        }
-    }//La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
+//    for (var i = 0; i < ids.length; i++) {
+//        if (ids[i] == ids[0]) {//Si verdadero, se agrega la clase active-menu
+//            $("#"+ids[i]+"").addClass("active-menu");
+//        }else{//De lo contrrio, le quita la clase active-menu
+//            $("#"+ids[i]+"").removeClass("active-menu")
+//        }
+//    }//La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
 
 
@@ -120,13 +120,7 @@ gestionardocente.addEventListener("click", function(event){
     //id de las opciones del meu lateral, este for lo que hara sera cambiar
     //las clases de cada elemento seleccionado, esto sirve para que cuando el usuario
     //precione alguna opcion, esta se quede seleccionada con el color rojo
-
-    crear_docente.addEventListener("click", function(event){
-        event.preventDefault();//Previene que la etiqueta "a" ejecute el href
-        $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
-    });
-
-
+    
     for (var i = 0; i < ids.length; i++) {
         if (ids[i] == ids[0]) {//Si verdadero, se agrega la clase active-menu
             $("#"+ids[i]+"").addClass("active-menu");
@@ -135,11 +129,16 @@ gestionardocente.addEventListener("click", function(event){
         }
     }//La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
+/*
+crear_docente.addEventListener("click", function(event){
+        event.preventDefault();//Previene que la etiqueta "a" ejecute el href
+        $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
+    });
+*/
 
-function creardocente(){
-    $("#creardocente").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
+function crear_docente(){
+    $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
 }
-
 
 
 

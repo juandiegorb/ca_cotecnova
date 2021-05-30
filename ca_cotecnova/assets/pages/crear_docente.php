@@ -21,23 +21,15 @@
 <!-- /. ROW  -->
 <div class="row">
   	<section id="service" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <h2 class="ser-title">Bienvenido</h2>
-            <hr class="botm-line">
-            <p>Bienvenid@ al formulario de registro, por favor rellenar los siguientes campos con informaci&oacute;n valida y real.</p>
-            <p>Todos los datos pedidos ser&aacute;n de uso aplicativo, se guardar&aacute; la privacidad del usuario.</p>
-          </div>
-          <div class="col-md-8 col-sm-8">
+          <div class="col-md-offset-2 col-md-8 col-sm-8">
             <div class="card">
               <!-- Tab panes -->
               <div class="card-body">
                   <!-- Formulario donde al darle al boton se envian los datos al controlador de insertar usuario -->
                   <form class="form-horizontal form-material" action="Controlador/insertarUsuario.php" method="POST">                
                   <div class="form-group">
-                    <label class="col-sm-12">Tipo de documento</label>
-                    <div class="col-sm-12">
+                    <label class="col-sm-3">Tipo de documento</label>
+                    <div class="col-sm-8">
                         <select class="form-control form-control-line" name="tipoDocumento" required="">
                         <option disabled selected="true">Seleccione una opcion</option>
                         <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
@@ -129,8 +121,6 @@
                 </form>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </section>
 </div>

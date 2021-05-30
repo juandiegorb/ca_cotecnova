@@ -20,7 +20,7 @@
 <!-- /. ROW  -->
 <div class="row">
   	<div class="col-md-12 col-sm-12">
-	  	<a href="#" id="crear_docente" class="btn btn-primary" style="float: right;" name="enviar">Agregar</a>
+            <a class="btn btn-primary" onclick="crear_docente()" style="float: right;" name="enviar">Agregar</a>
 		<br><br>
 		    <div class="panel panel-default">
 		      <div class="panel-body">
