@@ -10,12 +10,11 @@
     require_once '../model/MySQL.php'; 
     $mysql = new MySQL(); //se declara un nuevo array
     $mysql->conectar();//Conexion a la base de datos
-    
-    $seleccionTipoUsuario = $mysql->efectuarConsulta("SELECT id_docente, documento, nombres, apellidos, clave FROM docente WHERE tipo_usuario_id_tipo_usuario = 2");     
-    
+    $consulta = $mysql->efectuarConsulta("SELECT id_docente, documento, nombres, apellidos FROM docente WHERE estado = 1");
+    //Este while recorre las filas encontradas en la consulta anterior
 ?>
 <head>
-	<link rel="stylesheet" type="text/css" href="../assets/css/datatables/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/datatables/jquery.dataTables.min.css">        
 </head>
 
 <!-- /. ROW  -->
@@ -62,7 +61,7 @@
                       <div class="form-group">
                     <div class=" col-md-offset-7 col-md-2 ">
                          <!-- Boton que "enviara" los datos -->
-                         <button class="btn btn-success" onclick="crearDocente();">Registrarse</button>
+                         <button class="btn btn-success" onclick="editarDocente();">Registrarse</button>
                     </div>
                     <div class="col-sm-9 col-md-2">
                         <!-- Boton que redirecciona al index -->
@@ -77,3 +76,11 @@
     </section>
 </div>
       <!-- /. ROW  -->
+<script src="../assets/js/jquery/jquery-3.4.1.min.js"></script>
+<script src="../assets/js/jquery/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready( function () {
+    $('#ver_docente').DataTable();
+} );
+</script>

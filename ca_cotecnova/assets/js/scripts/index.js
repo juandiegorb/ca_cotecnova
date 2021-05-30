@@ -130,12 +130,6 @@ gestionardocente.addEventListener("click", function(event){
     }//La case active-menu sirve para dar color rojo a la opcion seleccionada del menu
 });
 
-function crear_docente(){
-    $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
-}
-
-
-
 //Funcion que se ejecutal al dar click en la opcion del menu retirar
 gestionarestudiante.addEventListener("click", function(event){
     event.preventDefault();//Previene que la etiqueta "a" ejecute el href
@@ -275,6 +269,14 @@ function submittransferir(){
 function cancelar(){ 
     $("#view").load("pages/inicio.php");//Cargar en la etiqueta con id view la vista solicitada
 };
+// Muestra la pagina de docente
+function crear_docente(){
+    $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
+}
+//muestra la pagina de editar
+function editar_docente(){ 
+    $("#view").load("pages/editardocente.php");//Cargar en la etiqueta con id view la vista solicitada
+};
 
 function crearDocente(){
   event.preventDefault();//Previene que la etiqueta "a" ejecute el href
@@ -305,6 +307,9 @@ function crearDocente(){
     alertify.error('Datos incorrectos');//Se le informa al usuario que los datos ingresados son incorrectos
   }    
 }
+
+
+
 //Funcion que se ejecutal al dar click en el boton transferir de la presentacion
 function submitdepositar(){
     var monto1 = document.getElementById("monto1").value.trim();//Guarda la informacion del monto ingresado por el usuario
