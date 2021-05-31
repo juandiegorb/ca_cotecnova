@@ -47,9 +47,10 @@
 			                <td><?php echo $resultado['nombres'] ?></th>
 			                <td><?php echo $resultado['apellidos'] ?></td>
 			                <td>
-                                            <a onclick="editar_docente('<?php echo $resultado['id_docente'] ?>')" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
+                                <a onclick="editar_docente('<?php echo $resultado['id_docente'] ?>')" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
 			                    <!-- Boton que redirecciona al index -->
-			                    <a href="eliminar_usuario.php?id=<?php echo $id_docente ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
+								<a onclick="eliminar_docente('<?php echo $resultado['id_docente'] ?>')" class="btn btn-danger col-lg-offset-1 col-lg-6" name="eliminar">Eliminar</a>
+			                    <!--<a href="eliminar_usuario.php?id=<?php echo $id_docente ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>-->
 			                </td>
 			              </tr>
 			            <?php
