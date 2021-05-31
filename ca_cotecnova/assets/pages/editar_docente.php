@@ -7,15 +7,19 @@
         //no permite que se entre a las demas vistas por medio de la url
         header("location: ../index.php");
     }
+    $id = $_GET["id"];    
     require_once '../model/MySQL.php'; 
     $mysql = new MySQL(); //se declara un nuevo array
     $mysql->conectar();//Conexion a la base de datos
-    $consulta = $mysql->efectuarConsulta("SELECT id_docente, documento, nombres, apellidos FROM docente WHERE estado = 1");
-    //Este while recorre las filas encontradas en la consulta anterior
+    $consulta = $mysql->efectuarConsulta("SELECT id_docente, documento, nombres, apellidos, clave FROM docente WHERE id_docente = ".$id."");
+    while ($resultado= mysqli_fetch_assoc($consulta)){      
+        $id_docente = $resultado['id_docente'];
+        $documento = $resultado['documento'];
+        $nombres = $resultado['nombres'];
+        $apellidos = $resultado['apellidos'];
+        $clave = $resultado['clave'];
+    }
 ?>
-<head>
-	<link rel="stylesheet" type="text/css" href="../assets/css/datatables/jquery.dataTables.min.css">        
-</head>
 
 <!-- /. ROW  -->
 <div class="row">
@@ -25,29 +29,35 @@
               <!-- Tab panes -->
               <div class="card-body">
                   <!-- Formulario donde al darle al boton se envian los datos al controlador de insertar usuario -->
-                  <form class="form-horizontal form-material" method="POST">     
+                  <form class="form-horizontal form-material" method="POST">    
+                      <div class="form-group">
+                          <label hidden="" class="col-md-3">id</label>
+                    <div class="col-md-8">
+                        <input type="hidden"  id="id"  value="<?php echo $id_docente; ?>" class="form-control form-control-line" >
+                    </div>
+                  </div>   
                       <div class="form-group">
                     <label class="col-md-3">Numero Documento</label>
                     <div class="col-md-8">
-                        <input type="number"  id="numerodocumento" placeholder="Ingrese el numero del documento" name="numeroDocumento"  class="form-control form-control-line" required="" >
+                        <input type="number"  id="numerodocumento" placeholder="Ingrese el numero del documento" name="numeroDocumento" value="<?php echo $documento; ?>" class="form-control form-control-line" required="" >
                     </div>
                   </div>                  
                    <div class="form-group">
                     <label class="col-md-3">Nombres</label>
                     <div class="col-md-8">
-                        <input type="text" id="nombres" placeholder="Ingrese sus nombres" name="nombresCompleto" class="form-control form-control-line" required="">
+                        <input type="text" id="nombres" placeholder="Ingrese sus nombres" name="nombresCompleto" class="form-control form-control-line" value="<?php echo $nombres; ?>" required="">
                     </div>
                   </div>
                       <div class="form-group">
                     <label class="col-md-3">Apellidos</label>
                     <div class="col-md-8">
-                        <input type="text" id="apellidos" placeholder="Ingrese sus apellidos" name="apellidosCompleto" class="form-control form-control-line" required="">
+                        <input type="text" id="apellidos" placeholder="Ingrese sus apellidos" name="apellidosCompleto" class="form-control form-control-line" value="<?php echo $apellidos; ?>" required="">
                     </div>
                   </div>
                   <div class="form-group">                  
                     <label class="col-md-3">Clave</label>
                     <div class="col-md-8">
-                        <input type="password" id="clave" placeholder="Ingrese su clave" name="clave" class="form-control form-control-line" required="">
+                        <input type="password" id="clave" placeholder="Ingrese su clave" name="clave" class="form-control form-control-line" value="<?php echo $clave; ?>" required="">
                     </div>
                   </div>
                   <div class="form-group">
@@ -61,7 +71,7 @@
                       <div class="form-group">
                     <div class=" col-md-offset-7 col-md-2 ">
                          <!-- Boton que "enviara" los datos -->
-                         <button class="btn btn-success" onclick="editarDocente();">Registrarse</button>
+                         <button class="btn btn-success" onclick="editarDocente()">editar</button>
                     </div>
                     <div class="col-sm-9 col-md-2">
                         <!-- Boton que redirecciona al index -->

@@ -274,8 +274,8 @@ function crear_docente(){
     $("#view").load("pages/crear_docente.php");//Cargar en la etiqueta con id view la vista solicitada
 }
 //muestra la pagina de editar
-function editar_docente(){ 
-    $("#view").load("pages/editardocente.php");//Cargar en la etiqueta con id view la vista solicitada
+function editar_docente(id){ 
+    $("#view").load("pages/editar_docente.php?id="+id);//Cargar en la etiqueta con id view la vista solicitada
 };
 
 function crearDocente(){
@@ -296,10 +296,10 @@ function crearDocente(){
         success:function(r){//Funcion que se ejecuta si se completa la peticion y retorna un valor
             if(r==1){//Se valida si el valor retornado es igual a 1, pues esto es el resultado de la consulta sql, si se ejecuto sin ningun problema
                 alertify.success('Registro exitoso :)');//Se le alerta al usuario que se logeado correctamente
-                setTimeout(function(){ window.location = 'index.php';}, 50000);//Despues de 1 segundo se redirecciona a la pagina de administracion
+                setTimeout(function(){ window.location = 'index.php';}, 1000);//Despues de 1 segundo se redirecciona a la pagina de administracion
             }else if(r==0){//Se valida si el valor retornado es igual a 0, pues esto es el resultado de la consulta sql, si el usuario no se encontro
               alertify.error('Error en la creacion de los datos');//Se le alerta al usuario que no se ha encontrado el usuario ingresado
-              setTimeout(function(){ window.location = 'index.php';}, 50000);
+              setTimeout(function(){ window.location = 'index.php';}, 1000);
             }
         }
     });  
@@ -308,6 +308,35 @@ function crearDocente(){
   }    
 }
 
+function editarDocente(){
+  event.preventDefault();//Previene que la etiqueta "a" ejecute el href
+  //Se crean variables para guardar lo ingresado en los inputs del login  
+  var id = document.getElementById("id").value;//Guarda la informacion del numero de cedula ingresado por el usuario
+  var documento = document.getElementById("numerodocumento").value.trim();//Guarda la informacion del numero de cedula ingresado por el usuario
+  var nombres = document.getElementById("nombres").value.trim();//Guarda la informacion de la contraseña ingresada por el usuario  
+  var apellidos = document.getElementById("apellidos").value.trim();
+  var clave = document.getElementById("clave").value.trim();
+  if( id != '' && documento != '' && nombres != '' && apellidos!='' && clave!='') {
+    //Variable que se va a enviar po ajax
+    cadena="id=" + id + "&documento=" + documento + "&nombres=" + nombres + "&apellidos=" + apellidos + "&clave=" + clave;
+    $.ajax({
+        type:"post",//Metodo de envio
+        url:"controller/editarDocente.php",//Ruta destino a la cual se le va a enciar la variable
+        data:cadena,//La informacion que se va a enviar a la ruta destino
+        success:function(r){//Funcion que se ejecuta si se completa la peticion y retorna un valor
+            if(r==1){//Se valida si el valor retornado es igual a 1, pues esto es el resultado de la consulta sql, si se ejecuto sin ningun problema
+                alertify.success('Actualizacion exitosa :)');//Se le alerta al usuario que se logeado correctamente
+                setTimeout(function(){ window.location = 'index.php';}, 1000);//Despues de 1 segundo se redirecciona a la pagina de administracion
+            }else if(r==0){//Se valida si el valor retornado es igual a 0, pues esto es el resultado de la consulta sql, si el usuario no se encontro
+              alertify.error('Error en la creacion de los datos');//Se le alerta al usuario que no se ha encontrado el usuario ingresado
+              setTimeout(function(){ window.location = 'index.php';}, 1000);
+            }
+        }
+    });  
+  }else{
+    alertify.error('Datos incorrectos');//Se le informa al usuario que los datos ingresados son incorrectos
+  }    
+}
 
 
 //Funcion que se ejecutal al dar click en el boton transferir de la presentacion
