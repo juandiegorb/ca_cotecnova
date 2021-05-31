@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 18:34:10
+-- Tiempo de generación: 31-05-2021 a las 00:22:59
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -34,8 +34,16 @@ CREATE TABLE `administrador` (
   `nombres` varchar(45) NOT NULL COMMENT 'Nombres del administrador',
   `apellidos` varchar(45) NOT NULL COMMENT 'Apellidos del administrador',
   `clave` varchar(45) NOT NULL,
-  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL
+  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_administrador`, `documento`, `nombres`, `apellidos`, `clave`, `tipo_usuario_id_tipo_usuario`, `estado`) VALUES
+(4, '123', 'Juan', 'Rios', '123', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -85,8 +93,18 @@ CREATE TABLE `docente` (
   `nombres` varchar(45) NOT NULL COMMENT 'Nombres del docente\n\n',
   `apellidos` varchar(45) NOT NULL,
   `clave` varchar(45) NOT NULL,
-  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL
+  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `docente`
+--
+
+INSERT INTO `docente` (`id_docente`, `documento`, `nombres`, `apellidos`, `clave`, `tipo_usuario_id_tipo_usuario`, `estado`) VALUES
+(1, '123', 'Juan', 'Rios', '123', 2, 1),
+(2, '123', 'Juan', 'Rios', '123', 2, 1),
+(3, '321', 'juan', 'david', '321', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -104,7 +122,8 @@ CREATE TABLE `estudiante` (
   `clave` varchar(45) NOT NULL,
   `horario_id_horario` int(11) NOT NULL COMMENT 'Identificador del horario',
   `Carrera_id_carrera` int(11) NOT NULL,
-  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL
+  `tipo_usuario_id_tipo_usuario` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -141,6 +160,15 @@ CREATE TABLE `tipo_usuario` (
   `id_tipo_usuario` int(11) NOT NULL COMMENT 'Id del usuario',
   `nombre` varchar(45) NOT NULL COMMENT 'Nombre (Administrador, Estudiante o Docente)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id_tipo_usuario`, `nombre`) VALUES
+(1, 'Estudiante'),
+(2, 'Docente'),
+(3, 'Aministrador');
 
 --
 -- Índices para tablas volcadas
@@ -228,7 +256,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del administrador', AUTO_INCREMENT=4;
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del administrador', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `aula`
@@ -249,10 +277,22 @@ ALTER TABLE `clase`
   MODIFY `id_clase` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la clase', AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `docente`
+--
+ALTER TABLE `docente`
+  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del docente', AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
   MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del estudiante', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `horario`
+--
+ALTER TABLE `horario`
+  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del horario';
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
@@ -264,7 +304,7 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
-  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del usuario', AUTO_INCREMENT=7;
+  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del usuario', AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
