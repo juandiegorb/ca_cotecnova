@@ -40,7 +40,7 @@
                             </div>
                         </div> 
                         <div class="form-group">
-                          <label class="col-md-offset-3 col-md-12">¿Seguro que desea eliminar al docente?</label>
+                          <label class="col-md-offset-2 col-md-12">¿Esta seguro de eliminar al usuario con el documento?</label>
                         </div> 
                   </div>           
                       <div class="form-group">
